@@ -1,1 +1,0 @@
-Finnflix Capital
