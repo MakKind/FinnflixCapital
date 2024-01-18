@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finnflix Capital</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .main{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right, #000000, #555555);
+        }
+        nav{
+            width: 80%;
+            position: sticky;
+            margin: 20px auto;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+        }
+        .logo{
+            flex-basis: 20%;
+        }
+        .logo img{
+            width: 150 px;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+        }
+        .nav-links ul li a{
+            color:#348341;
+            text-decoration: none;
+        }
+        .content{
+            width: 1000px; 
+            height: 1000px; 
+            position: absolute; 
+            top: 50%; 
+            left: -10%; 
+            transform: translateY(-50%) 
+        } 
+        #circle{ 
+            width: 1000px; 
+            height: 1000px; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            border-radius: 50%;
+            transform: rotate(0deg);
+            transition: 1s;
+        } 
+        .feature img{ 
+            width: 70px; 
+        } 
+        .feature{ 
+            position: absolute; 
+            display: flex;
+            color: #afafaf;
+        } 
+        .feature div{
+            margin-left: 30px;
+        }
+        .feature div p{
+            margin-left: 8px;
+        }
+        .one{ 
+            top: 450px; 
+            right: 600px; 
+            transform: rotate(-180deg);
+        } 
+        .two{ 
+            top: 150px; 
+            left: 350px; 
+            transform: rotate(-90deg);
+        } 
+        .three{ 
+            bottom: 450px; 
+            left: 600px; 
+            transform: rotate(0deg);
+        } 
+        .four{ 
+            bottom: 140px; 
+            right: 350px; 
+            transform: rotate(-270deg);
+        } 
+        .logo1{
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .controls{
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #upBtn{ 
+            position: relative;
+            top: -200px;
+            left: 30px;
+            width: 15px; 
+            cursor: pointer; 
+        } 
+        #downBtn{ 
+            position: relative;
+            top: 200px;
+            width: 15px; 
+            cursor: pointer; 
+            transform: rotate(180deg)
+        }
+        .overlay{
+            width: 0;
+            height: 0;
+            border-top: 500px solid #afafaf;
+            border-right: 500px solid transparent;
+            border-bottom: 500px solid #afafaf;
+            border-left: 550px solid #afafaf;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <img src="assets/images/Logo 2.png">
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#'>Services</a></li>
+                    <li><a href='#'>About Us</a></li>
+                    <li><a href='#'>Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="overlay"></div>
+            <img src="assets/images/Logo 1.png" class="logo1">
+            <div id="circle">
+                <div class="feature one">
+                    <div>
+                        <h2>Welcome to our Finnflix Capital</h2>
+                        <p>We are thrilled to extend a warm welcome to you as you embark on your financial journey with Finnflix Capital. At Finnflix, we understand the importance of your financial well-being, and we are dedicated to providing you with tailored solutions to meet your unique needs.</p>
+                    </div>
+                </div>
+                <div class="feature two">
+                    <div>
+                        <h2>Our Services</h2>
+                        <p>
+                            <ul>
+                                <li>Investment Planning</li>
+                                <li>Retirement Solutions</li>
+                                <li>Insurance Services</li>
+                                <li>Financial Consulting</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="feature three">
+                    <div>
+                        <h2>About Us</h2>
+                        <p>Welcome to Finnflix Capital, where financial empowerment meets personalized service. 
+                            At Finnflix, we believe that everyone deserves access to sound financial advice and tailored solutions to achieve their goals. 
+                            Our mission is to make a positive impact on the financial well-being of individuals and families by providing expert guidance and a 
+                            comprehensive range of financial services.</p>
+                    </div>
+                </div>
+                <div class="feature four">
+                    <div>
+                        <h2>Contact Us</h2>
+                        <p>Reach out to us for inquiries or to schedule a consultation.
+                            <ul>
+                                <li>Contact 1</li>
+                                <li>Contact 1</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls"> 
+            <img src="assets/images/arrow.png" id="upBtn"> 
+            <img src="assets/images/arrow.png" id="downBtn"> 
+        </div> 
+    </div>
+    <script>
+        var circle = document.getElementById("circle"); 
+        var upBtn = document.getElementById("upBtn"); 
+        var downBtn = document.getElementById("downBtn"); 
+        var rotateValue = circle.style.transform; 
+        var rotateSum; 
+        upBtn.onclick = function() 
+        { 
+            rotateSum = rotateValue + "rotate(-90deg)"; 
+            circle.style.transform = rotateSum; 
+            rotateValue = rotateSum; 
+        }
+        downBtn.onclick = function() 
+        { 
+            rotateSum = rotateValue + "rotate(90deg)"; 
+            circle.style.transform = rotateSum; 
+            rotateValue = rotateSum; 
+        } 
+    </script>
+        
+        
+</body>
+    
+    
+
+</html>

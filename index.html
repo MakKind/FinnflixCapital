@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,94 +8,78 @@
       rel="stylesheet"
       href="styles/style.css">
 </head>
-
 <body>
-    <div class="main">
+
+    <!-- Header Section -->
+    <header>
         <nav>
             <div class="logo">
                 <img src="assets/images/Logo 2.png">
             </div>
             <div class="nav-links">
-                <ul>
-                    <li><a href='#'>Home</a></li>
-                    <li><a href='#'>Services</a></li>
-                    <li><a href='#'>About Us</a></li>
-                    <li><a href='#'>Contact</a></li>
-                </ul>
-            </div>
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>  
         </nav>
+    </header>
 
-        <div class="content">
-            <div class="overlay"></div>
-            <img src="assets/images/Logo 1.png" class="logo1">
-            <div id="circle">
-                <div class="feature one">
-                    <div>
-                        <h2>Welcome to our Finnflix Capital</h2>
-                        <p>We are thrilled to extend a warm welcome to you as you embark on your financial journey with Finnflix Capital. At Finnflix, we understand the importance of your financial well-being, and we are dedicated to providing you with tailored solutions to meet your unique needs.</p>
-                    </div>
-                </div>
-                <div class="feature two">
-                    <div>
-                        <h2>Our Services</h2>
-                        <p>
-                            <ul>
-                                <li>Investment Planning</li>
-                                <li>Retirement Solutions</li>
-                                <li>Insurance Services</li>
-                                <li>Financial Consulting</li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-                <div class="feature three">
-                    <div>
-                        <h2>About Us</h2>
-                        <p>Welcome to Finnflix Capital, where financial empowerment meets personalized service. At Finnflix, we believe that everyone deserves access to sound financial advice and tailored solutions to achieve their goals. Our mission is to make a positive impact on the financial well-being of individuals and families by providing expert guidance and a comprehensive range of financial services.</p>
-                    </div>
-                </div>
-                <div class="feature four">
-                    <div>
-                        <h2>Contact Us</h2>
-                        <p>Reach out to us for inquiries or to schedule a consultation.
-                            <ul>
-                                <li>Contact 1</li>
-                                <li>Contact 1</li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <!-- Body Section -->
+    <div class="services">
+        <div class="service-block">
+            <h2>Investment Planning</h2>
+            <p>Strategize wealth growth through diversified and tailored investment portfolios.</p>
         </div>
-
-        <div class="controls"> 
-            <img src="assets/images/arrow.png" id="upBtn"> 
-            <img src="assets/images/arrow.png" id="downBtn"> 
-        </div> 
+        <div class="service-block">
+            <h2>Retirement Solutions</h2>
+            <p>Secure your future with personalized retirement plans and financial stability.</p>
+        </div>
+        <div class="service-block">
+            <h2>Insurance Services</h2>
+            <p>Protect your assets and loved ones with comprehensive insurance coverage.
+            </p>
+        </div>
+        <div class="service-block">
+            <h2>Financial Consulting</h2>
+            <p>Expert guidance for informed financial decisions and long-term fiscal success.</p>
+        </div>
     </div>
-    <script>
-        var circle = document.getElementById("circle"); 
-        var upBtn = document.getElementById("upBtn"); 
-        var downBtn = document.getElementById("downBtn"); 
-        var rotateValue = circle.style.transform; 
-        var rotateSum; 
-        upBtn.onclick = function() 
-        { 
-            rotateSum = rotateValue + "rotate(-90deg)"; 
-            circle.style.transform = rotateSum; 
-            rotateValue = rotateSum; 
-        }
-        downBtn.onclick = function() 
-        { 
-            rotateSum = rotateValue + "rotate(90deg)"; 
-            circle.style.transform = rotateSum; 
-            rotateValue = rotateSum; 
-        } 
-    </script>
-        
-        
-</body>
-    
-    
 
+    <div class="contactform">
+        <div class="contactformblock">
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="query">Query:</label>
+                <textarea id="query" name="query" rows="4" required></textarea>
+        
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="contactformblock">
+            <img src="/assets/images/Logo 1.png" style="width: 500px; height: auto;">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023-2024 Finnflix Capital. All rights reserved.</p>
+        <p>Contact us: test@finnflixcapital.com</p>
+        <p id="visitCounter">Visits: <span id="counter">0</span></p>
+
+        <script>
+            // JavaScript to increment visit counter
+            let visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount++;
+            localStorage.setItem('visitCount', visitCount);
+            document.getElementById('counter').textContent = visitCount;
+        </script>
+    </footer>
+
+</body>
 </html>
