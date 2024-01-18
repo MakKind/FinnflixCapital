@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 0;;
 }
 
 header {
@@ -12,7 +12,7 @@ header {
 }
 
 header img {
-    width: 100px; /* Adjust as needed */
+    width: 150px; /* Adjust as needed */
     height: auto;
     display: inline-block;
     vertical-align: middle;
@@ -31,39 +31,91 @@ nav a {
 
 .services {
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly;
     padding: 20px;
+    background: url('/assets/images/test.png') no-repeat fixed;
+    background-size: cover;
+    opacity: 0.5;         
 }
 
 .service-block {
     width: 200px;
     padding: 20px;
-    border: 1px solid #2e2e2e;
+    border: 1px solid #000000;
     text-align: center;
+    color: #ffffff;;
     margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-block:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
 }
 
 footer {
     background-color: #333;
     color: #fff;
-    padding: 10px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
 }
 
 .contactform {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .contactformblock {
-    width: 2000px;
-    padding: 60px;
-    text-align: center;
-    margin: 0 10px;
+    width: 75%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contactform form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contactform form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contactform form input,
+.contactform form textarea {
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contactform form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.info-section {
+    color: #9a9a9a;
+    max-height: 400px;
+    max-width: 25%;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+    margin-bottom: 20px;
 }
 
 nav{
@@ -78,7 +130,7 @@ nav{
     flex-basis: 20%;
 }
 .logo img{
-    width: 150 px;
+    width: 300 px;
 }
 .nav-links{
     flex: 1;
